@@ -1,0 +1,175 @@
+.guideme {
+	&__overlay {
+		/* transition: all 0.3s ease-out;
+		position: absolute;
+	    z-index: 999999;
+	    background-color: #000; */
+
+	    position: absolute;
+		z-index: 999999;
+		background-color: #000;
+		opacity: 0;
+		/* background: -moz-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+		background: -webkit-gradient(radial,center center,0px,center center,100%,color-stop(0%,rgba(0,0,0,0.4)),color-stop(100%,rgba(0,0,0,0.9)));
+		background: -webkit-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+		background: -o-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+		background: -ms-radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+		background: radial-gradient(center,ellipse cover,rgba(0,0,0,0.4) 0,rgba(0,0,0,0.9) 100%);
+		filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#66000000',endColorstr='#e6000000',GradientType=1);
+		-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+		filter: alpha(opacity=50); */
+		-webkit-transition: all 0.3s ease-out;
+		 -moz-transition: all 0.3s ease-out;
+		  -ms-transition: all 0.3s ease-out;
+		   -o-transition: all 0.3s ease-out;
+		      transition: all 0.3s ease-out;
+
+
+	}
+
+	&__highlight-layer {
+		position: absolute;
+		z-index: 9999998;
+		background-color: #FFF;
+		background-color: rgba(255,255,255,.9);
+		border: 1px solid #777;
+		border: 1px solid rgba(0,0,0,.5);
+		border-radius: 4px;
+		box-shadow: 0 2px 15px rgba(0,0,0,.4);
+		-webkit-transition: all 0.3s ease-out;
+		 -moz-transition: all 0.3s ease-out;
+		  -ms-transition: all 0.3s ease-out;
+		   -o-transition: all 0.3s ease-out;
+		      transition: all 0.3s ease-out;
+
+  		*, *:before, *:after {
+			-webkit-box-sizing: content-box;
+			 -moz-box-sizing: content-box;
+			  -ms-box-sizing: content-box;
+			   -o-box-sizing: content-box;
+			      box-sizing: content-box;
+		}
+	}
+
+	&__tooltip-reference-layer {
+		position: absolute;
+		visibility: hidden;
+		z-index: 10000000;
+		background-color: transparent;
+		-webkit-transition: all 0.3s ease-out;
+		 -moz-transition: all 0.3s ease-out;
+		  -ms-transition: all 0.3s ease-out;
+		   -o-transition: all 0.3s ease-out;
+		      transition: all 0.3s ease-out;
+	}
+	&__tooltip {
+		color: #fff;
+		font-size: 16px;
+		line-height: 1.3;
+		position: absolute;
+		visibility: visible;
+		padding: 10px;
+		background-color: #7300FF;//#a2a2a2;
+		min-width: 200px;
+		max-width: 400px;
+		border-radius: 3px;
+		font-weight: 400;
+		box-shadow: 0 1px 10px rgba(0,0,0,.4);
+		opacity: 0;
+		-webkit-transition: opacity 0.1s ease-out;
+		 -moz-transition: opacity 0.1s ease-out;
+		  -ms-transition: opacity 0.1s ease-out;
+		   -o-transition: opacity 0.1s ease-out;
+		      transition: opacity 0.1s ease-out;
+
+	    &.in {
+	    	opacity: 1;
+	    }  
+	}
+
+	&__relative-position {
+  		position: relative;
+	}
+
+	&__show-element {
+  		z-index: 9999999 !important;
+	}
+
+	&__arrow {
+		position: absolute;
+		visibility: visible;
+		//border: 1px solid red;
+		display: table;
+		width: 20px;
+		height: 20px;
+
+		&--left {
+			&:before {
+				content: "";
+			    position: absolute;
+			    border-left: 15px solid #7300FF;//#a2a2a2;
+			    border-top: 10px solid transparent;
+			    border-bottom: 10px solid transparent;
+			}
+		}
+
+		&--right {
+			&:before {
+				content: "";
+			    position: absolute;
+			    border-right: 15px solid #7300FF;//#a2a2a2;
+			    border-top: 10px solid transparent;
+			    border-bottom: 10px solid transparent;
+			}
+		}
+
+		&--top {
+			&:before {
+				content: "";
+			    position: absolute;
+			    border-top: 15px solid #7300FF;//#a2a2a2;
+			    border-left: 10px solid transparent;
+			    border-right: 10px solid transparent;
+			}
+		}
+		&--bottom {
+			&:before {
+				content: "";
+			    position: absolute;
+			    border-bottom: 15px solid #7300FF;//#a2a2a2;
+			    border-left: 10px solid transparent;
+			    border-right: 10px solid transparent;
+			}
+		}
+
+		> span {
+			border-radius: 100%;
+		    display: table-cell;
+		    //width: 100%;
+		    position:relative;
+		    //background: purple;
+		    //margin: 0 7px 0 0;
+		    &:before {
+		    	content: "";
+		    	display: block;
+		    	width: 10px;
+		    	height: 10px;
+		    	position: absolute;
+		    	background-color: purple;
+		    	left: 50%;
+		    	margin-left: -5px;
+		    	border-radius: 100%;
+		    }
+		}
+
+	}
+}
+
+tr.guideme-show-element > td,
+tr.guideme-show-element > th {
+	position: relative;
+}
+tr.guideme-show-element > td,
+tr.guideme-show-element > th {
+	z-index: 9999999 !important;
+}
